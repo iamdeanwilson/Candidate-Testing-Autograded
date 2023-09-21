@@ -12,9 +12,9 @@ let candidateAnswer = ('');
 
 
 //TODO: Variables for Part 2
-let questions = ('');
-let correctAnswers = ('');
-let candidateAnswers = ('');
+let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ", "(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
+let candidateAnswers = [];
 
 
 function askForName() {
@@ -24,18 +24,42 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  candidateAnswer = input.question(question)
+  candidateAnswers[0] = input.question(questions[0])
+  candidateAnswers[1] = input.question(questions[1])
+  candidateAnswers[2] = input.question(questions[2])
+  candidateAnswers[3] = input.question(questions[3])
+  candidateAnswers[4] = input.question(questions[4])
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
-if (candidateAnswer != "Sally Ride") {
-  console.log("Sorry, that is not the correct answer.")
+if (candidateAnswers[0] != "Sally Ride") {
+  console.log("Sorry, that is not the correct answer.");
 } else {
-  console.log("That is correct! Sally Ride was the first American woman in space!")
-}
+  console.log("That is correct! Sally Ride was the first American woman in space!");
+} ;
+if (candidateAnswers[1] != "true") {
+  console.log("Sorry, that is not the correct answer.");
+} else {
+  console.log("That is correct! 5 kilometer == 5000 meters.");
+} ;
+if (candidateAnswers[2] != "40") {
+  console.log("Sorry, that is not the correct answer.");
+} else {
+  console.log("That is correct! The answer to this problem is 40.");
+} ;
+if (candidateAnswers[3] != "Trajectory") {
+  console.log("Sorry, that is not the correct answer.");
+} else {
+  console.log("That is correct! 'Trajectory' is the entry at index 2");
+} ;
+if (candidateAnswers[4] != "3") {
+  console.log("Sorry, that is not the correct answer.");
+} else {
+  console.log("That is correct! The minimum crew size for the ISS is 3.");
+} ;
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
@@ -46,7 +70,7 @@ if (candidateAnswer != "Sally Ride") {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log(`Hello ${candidateName}, hood luck!`);
+   console.log(`Hello ${candidateName}, good luck!`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
